@@ -1,5 +1,36 @@
 type Query {
+    findOneContract(ref: String): Contract
     findAllNotes(contract: String): [Note!]!
+}
+
+type Contract {
+    ref: String!
+    status: Status!
+    persons: [Person!]!
+}
+
+interface Status {
+    type: String!
+}
+
+type ActiveStatus implements Status {
+    type: String!
+}
+
+type TerminatedStatus implements Status {
+    type: String!
+    reason: Reason!
+}
+
+enum Reason {
+    LONG_TERM_HOSPITALIZATION,
+    DECEASE,
+    OTHER
+}
+
+type Person {
+    firstname: String
+    lastname: String
 }
 
 type Note {
