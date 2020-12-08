@@ -6,6 +6,9 @@ type Query {
     findAllNotes(contract: String): [Note!]!
 }
 
+type Mutation {
+}
+
 type Contract {
     ref: String!
     status: Status!
@@ -40,4 +43,7 @@ type Person {
 type Note {
     contract: String
     content: String
+}
+
+input ContractInput {
 }
