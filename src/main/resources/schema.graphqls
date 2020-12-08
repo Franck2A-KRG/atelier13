@@ -1,4 +1,5 @@
 type Query {
+    findAllContracts(limit: Int, skip: Int): [Contract!]!
     findOneContract(ref: String): Contract
     findAllNotes(contract: String): [Note!]!
 }
@@ -7,6 +8,7 @@ type Contract {
     ref: String!
     status: Status!
     persons: [Person!]!
+    notes: [Note!]!
 }
 
 interface Status {
