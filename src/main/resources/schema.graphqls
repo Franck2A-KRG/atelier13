@@ -1,7 +1,8 @@
-directive @uppercase on FIELD_DEFINITION
-
 type Query {
+    findAllNotes(contract: String): [Note!]!
 }
 
 type Note {
+    contract: String
+    content: String
 }

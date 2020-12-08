@@ -16,7 +16,6 @@ public class GraphQLConfiguration {
     /**
      * Fix issue https://github.com/graphql-java-kickstart/graphql-java-tools/issues/200
      */
-    /*
     @Bean
     public SchemaParserDictionary getSchemaParser() {
         SchemaParserDictionary dictionary = new SchemaParserDictionary();
@@ -26,7 +25,6 @@ public class GraphQLConfiguration {
         }});
         return dictionary;
     }
-    */
 
     @Bean
     public SchemaDirective uppercaseDirective() {
