@@ -1,0 +1,46 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.0'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.krgcorporate'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:8.0.0'
+
+    compile 'com.graphql-java-kickstart:graphql-java-tools:6.2.0'
+
+    // to embed Altair tool
+    runtimeOnly 'com.graphql-java-kickstart:altair-spring-boot-starter:8.0.0'
+
+    // to embed GraphiQL tool
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:8.0.0'
+
+    // to embed Voyager tool
+    runtimeOnly 'com.graphql-java-kickstart:voyager-spring-boot-starter:8.0.0'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // testing facilities
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:8.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
