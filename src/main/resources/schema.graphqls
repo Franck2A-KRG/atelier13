@@ -61,7 +61,3 @@ input PersonInput {
     firstname: String!
     lastname: String!
 }
-
-input NoteInput {
-    content: String!
-}
