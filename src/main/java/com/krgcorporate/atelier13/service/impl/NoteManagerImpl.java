@@ -24,14 +24,4 @@ public class NoteManagerImpl implements NoteManager {
     public List<Note> findAllByContract(String ref) {
         return notes.getOrDefault(ref, new ArrayList<>());
     }
-
-    @Override
-    public Note save(String ref, Note note) {
-        note.setContract(ref);
-
-        notes.computeIfAbsent(ref, k -> new ArrayList<>())
-                .add(note);
-
-        return note;
-    }
 }

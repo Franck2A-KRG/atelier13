@@ -17,4 +17,3 @@ public class ContractInput {
 
     private @Nullable List<PersonInput> persons;
 }
-

@@ -7,8 +7,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,13 +22,5 @@ public class NoteController {
     @GetMapping
     public List<Note> findAll(@PathVariable("ref") String ref) {
         return noteManager.findAllByContract(ref);
-    }
-
-    @PostMapping
-    public Note post(
-            @PathVariable("ref") String ref,
-            @RequestBody Note note
-    ) {
-        return noteManager.save(ref, note);
     }
 }
