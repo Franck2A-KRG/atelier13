@@ -1,67 +1,7 @@
 directive @uppercase on FIELD_DEFINITION
 
 type Query {
-    findAllContracts(limit: Int, skip: Int): [Contract!]!
-    findOneContract(ref: String): Contract
-    findAllNotes(contract: String): [Note!]!
-}
-
-type Mutation {
-    createContract(contract: ContractInput!): Contract
-}
-
-type Contract {
-    ref: String!
-    status: Status!
-    persons: [Person!]!
-    notes: [Note!]!
-}
-
-interface Status {
-    type: String!
-}
-
-type ActiveStatus implements Status {
-    type: String!
-}
-
-type TerminatedStatus implements Status {
-    type: String!
-    reason: Reason!
-}
-
-enum Reason {
-    LONG_TERM_HOSPITALIZATION,
-    DECEASE,
-    OTHER
-}
-
-type Person {
-    firstname: String
-    lastname: String @uppercase
 }
 
 type Note {
-    contract: String
-    content: String
-}
-
-input ContractInput {
-    ref: String!
-    status: StatusInput
-    persons: [PersonInput!]!
-}
-
-input StatusInput {
-    type: String!
-    reason: String
-}
-
-input PersonInput {
-    firstname: String!
-    lastname: String!
-}
-
-input NoteInput {
-    content: String!
 }

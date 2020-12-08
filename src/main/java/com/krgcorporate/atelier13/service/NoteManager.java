@@ -7,4 +7,6 @@ import java.util.List;
 public interface NoteManager {
 
     List<Note> findAllByContract(String contract);
+
+    Note save(String ref, Note note);
 }
