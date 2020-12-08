@@ -1,5 +1,3 @@
-directive @uppercase on FIELD_DEFINITION
-
 type Query {
     findAllContracts(limit: Int, skip: Int): [Contract!]!
     findOneContract(ref: String): Contract
@@ -34,7 +32,7 @@ enum Reason {
 
 type Person {
     firstname: String
-    lastname: String @uppercase
+    lastname: String
 }
 
 type Note {
